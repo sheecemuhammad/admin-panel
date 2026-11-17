@@ -1,14 +1,9 @@
-import { Typography } from "@/components/ui/typography";
+import { OverviewMain } from "@/components/dashboard/overview-main";
 
 export default function OverviewPage() {
   return (
-    <div className="flex flex-1 flex-col gap-1 px-6 py-6 md:px-8">
-      <Typography as="h1" variant="screenHeading" className="font-semibold">
-        Overview
-      </Typography>
-      <Typography as="p" variant="body" className="text-muted-foreground">
-        Dashboard content will go here.
-      </Typography>
+    <div className="flex flex-1 flex-col px-5 py-5 md:px-7 md:py-6">
+      <OverviewMain />
     </div>
   );
 }
