@@ -7,15 +7,15 @@ const typographyVariants = cva("text-foreground", {
     variant: {
       /** Newsreader 32 — hero / display */
       display: "font-heading text-[32px] leading-tight tracking-tight",
-      /** Inter 700 — auth welcome title (28 → 32 → 36) */
+      /** Inter 700 — auth welcome title */
       authHeading:
         "font-sans text-center text-[28px] font-bold leading-[1.15] tracking-tight sm:text-[32px] md:text-[36px]",
       /** Inter 26 — screen title */
       screenHeading: "font-sans text-[26px] leading-snug tracking-tight",
       /** Inter 20 — section title */
       sectionHeading: "font-sans text-[20px] leading-snug",
-      /** Inter 15–16 — body / interface */
-      body: "font-sans text-[15px] leading-relaxed md:text-base",
+      /** Inter 16 — auth / body copy (line-height 150%) */
+      body: "font-sans text-[16px] leading-[1.5]",
       /** Inter 13–14 — supporting / metadata */
       supporting:
         "font-sans text-[13px] leading-normal text-muted-foreground md:text-sm",
