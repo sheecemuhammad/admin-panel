@@ -167,32 +167,32 @@
 
 @layer utilities {
   .type-display {
-    font-family: var(--font-newsreader);
+    @apply font-heading;
     font-size: var(--text-display);
     line-height: var(--text-display--line-height);
   }
   .type-screen {
-    font-family: var(--font-newsreader);
+    @apply font-heading;
     font-size: var(--text-screen);
     line-height: var(--text-screen--line-height);
   }
   .type-section {
-    font-family: var(--font-newsreader);
+    @apply font-heading;
     font-size: var(--text-section);
     line-height: var(--text-section--line-height);
   }
   .type-scripture {
-    font-family: var(--font-newsreader);
+    @apply font-heading;
     font-size: var(--text-scripture);
     line-height: var(--text-scripture--line-height);
   }
   .type-body {
-    font-family: var(--font-inter);
+    @apply font-sans;
     font-size: var(--text-body);
     line-height: var(--text-body--line-height);
   }
   .type-supporting {
-    font-family: var(--font-inter);
+    @apply font-sans;
     font-size: var(--text-supporting);
     line-height: var(--text-supporting--line-height);
   }
