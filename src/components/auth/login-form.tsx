@@ -3,10 +3,10 @@
 import * as React from "react";
 import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Icon } from "@iconify/react";
 import { Eye, EyeOff } from "lucide-react";
 import { useForm } from "react-hook-form";
 
+import { GoogleIcon } from "@/components/auth/google-icon";
 import { Button } from "@/components/ui/button";
 import { Field, FieldError } from "@/components/ui/field";
 import {
@@ -34,7 +34,7 @@ function LoginForm() {
     },
   });
 
-  function onSubmit(_values: LoginFormValues) {
+  function onSubmit() {
     // Auth API wiring comes next
   }
 
@@ -56,7 +56,7 @@ function LoginForm() {
         variant="outline"
         className="border-border text-foreground hover:bg-muted/60 mt-8 h-12 w-full gap-2 rounded-[12px] border bg-white px-4 text-[15px] font-medium"
       >
-        <Icon icon="logos:google-icon" width={18} height={18} aria-hidden />
+        <GoogleIcon />
         Continue with Google
       </Button>
 
