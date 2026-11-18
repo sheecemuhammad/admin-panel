@@ -18,7 +18,7 @@ function OverviewAside({ className }: OverviewAsideProps) {
   return (
     <aside
       className={cn(
-        "flex w-full shrink-0 flex-col gap-5 lg:w-[320px]",
+        "flex w-full shrink-0 flex-col gap-5 xl:w-[320px]",
         className
       )}
     >

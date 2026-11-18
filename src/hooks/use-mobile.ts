@@ -6,7 +6,7 @@ function getIsMobile() {
   return window.innerWidth < MOBILE_BREAKPOINT;
 }
 
-export function useIsMobile() {
+function useIsMobile() {
   return React.useSyncExternalStore(
     (onStoreChange) => {
       const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);
@@ -17,3 +17,10 @@ export function useIsMobile() {
     () => false
   );
 }
+
+/** `true` at the Tailwind `md` breakpoint and above. */
+function useIsMdUp() {
+  return !useIsMobile();
+}
+
+export { MOBILE_BREAKPOINT, useIsMobile, useIsMdUp };

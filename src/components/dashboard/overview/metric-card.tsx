@@ -7,11 +7,11 @@ import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 import type { MetricAccent } from "@/lib/overview-data";
 import { cn } from "@/lib/utils";
 
-const accentStyles: Record<MetricAccent, { bar: string; delta: string }> = {
-  blue: { bar: "#3B82F6", delta: "text-blue-600" },
-  green: { bar: "#22A06B", delta: "text-emerald-600" },
-  amber: { bar: "#C4872A", delta: "text-amber-700" },
-  purple: { bar: "#7C6AF2", delta: "text-violet-600" },
+const accentStyles: Record<MetricAccent, { bar: string }> = {
+  blue: { bar: "#3B82F6" },
+  green: { bar: "#22A06B" },
+  amber: { bar: "#C4872A" },
+  purple: { bar: "#7C6AF2" },
 };
 
 type MetricCardProps = {
@@ -36,8 +36,6 @@ function MetricCard({
   const chartConfig = {
     v: { label, color: styles.bar },
   } satisfies ChartConfig;
-  const isTrendDelta = /^[+-]/.test(delta.trim());
-
   return (
     <Card
       size="sm"
@@ -65,14 +63,7 @@ function MetricCard({
             <Bar dataKey="v" fill="var(--color-v)" radius={[2, 2, 0, 0]} />
           </BarChart>
         </ChartContainer>
-        <p
-          className={cn(
-            "text-[10px] font-medium",
-            isTrendDelta ? styles.delta : "text-muted-foreground"
-          )}
-        >
-          {delta}
-        </p>
+        <p className="text-muted-foreground text-[10px] font-medium">{delta}</p>
       </CardContent>
     </Card>
   );

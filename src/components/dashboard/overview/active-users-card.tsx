@@ -110,7 +110,7 @@ function ActiveUsersCard({ data, className }: ActiveUsersCardProps) {
         className
       )}
     >
-      <CardHeader className="flex flex-row items-start justify-between gap-4 border-0">
+      <CardHeader className="flex flex-col items-start justify-between gap-3 border-0 sm:flex-row sm:gap-4">
         <div className="space-y-1">
           <CardTitle className="font-sans text-[16px] font-semibold">
             Active users
@@ -130,15 +130,15 @@ function ActiveUsersCard({ data, className }: ActiveUsersCardProps) {
           </span>
         </div>
       </CardHeader>
-      <CardContent>
+      <CardContent className="overflow-x-auto">
         <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-[260px] w-full"
+          className="aspect-auto h-[220px] w-full min-w-[280px] sm:h-[260px]"
           initialDimension={{ width: 640, height: 260 }}
         >
           <BarChart
             data={data}
-            margin={{ top: 8, right: 8, left: 0, bottom: 0 }}
+            margin={{ top: 8, right: 4, left: 0, bottom: 0 }}
             barCategoryGap="18%"
             barGap={2}
           >

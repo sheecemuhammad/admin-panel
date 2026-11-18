@@ -34,7 +34,7 @@ function PeriodToggle({
       size="sm"
       spacing={0}
       className={cn(
-        "h-[36px] w-[212px] gap-0 rounded-[12px]! bg-[#F2F3F5] p-[2.5px] shadow-none ring-0",
+        "h-[36px] w-full max-w-[212px] gap-0 rounded-[12px]! bg-[#F2F3F5] p-[2.5px] shadow-none ring-0 sm:w-[212px]",
         className
       )}
     >
@@ -43,7 +43,7 @@ function PeriodToggle({
           key={option.value}
           value={option.value}
           className={cn(
-            "h-[30px] min-w-0 flex-1 rounded-[12px]! px-0 font-sans text-[13px] leading-none font-medium text-[#8B8F97] shadow-none",
+            "h-[30px] min-w-0 flex-1 rounded-[12px]! px-1 font-sans text-[12px] leading-none font-medium text-[#8B8F97] shadow-none sm:px-0 sm:text-[13px]",
             "hover:bg-transparent hover:text-[#101828]",
             "group-data-[spacing=0]/toggle-group:rounded-[12px]!",
             "aria-pressed:bg-[#FFFFFF] aria-pressed:font-semibold aria-pressed:text-[#101828]",

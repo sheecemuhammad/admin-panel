@@ -27,12 +27,12 @@ export default function DashboardLayout({
   return (
     <SidebarProvider style={dashboardSidebarStyle} className="bg-black">
       <AppSidebar />
-      <SidebarInset className="my-3 mr-3 mb-3 ml-0 h-[calc(100svh-1.5rem)] max-h-[calc(100svh-1.5rem)] min-h-0 flex-1 overflow-hidden rounded-[24px] bg-[#F7F6F2] md:ml-2">
+      <SidebarInset className="m-2 ml-2 h-[calc(100svh-1rem)] max-h-[calc(100svh-1rem)] min-h-0 flex-1 overflow-hidden rounded-[16px] bg-[#F7F6F2] md:my-3 md:mr-3 md:mb-3 md:ml-2 md:h-[calc(100svh-1.5rem)] md:max-h-[calc(100svh-1.5rem)] md:rounded-[24px]">
         <header className="border-border/60 flex h-12 shrink-0 items-center gap-2 border-b px-4 md:hidden">
           <SidebarTrigger />
           <span className="text-sm font-medium">Admin GUIDED</span>
         </header>
-        <div className="flex min-h-0 flex-1 flex-col overflow-auto">
+        <div className="no-scrollbar flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto">
           {children}
         </div>
       </SidebarInset>
