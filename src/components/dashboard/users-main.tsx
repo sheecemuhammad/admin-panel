@@ -119,7 +119,7 @@ function UsersMain() {
 
         <div className="flex flex-col gap-3">
           <UsersTable
-            users={pageUsers}
+            rows={pageUsers}
             onViewProfile={(user) => {
               setSelectedUser(user);
               setDetailsOpen(true);
