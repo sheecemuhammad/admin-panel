@@ -20,8 +20,8 @@ function ContentTasksCard({ items, className }: ContentTasksCardProps) {
         <CardTitle className="font-sans text-[16px] font-semibold">
           Content & Tasks
         </CardTitle>
-        <span className="bg-muted text-muted-foreground inline-flex items-center rounded-full px-2.5 py-1 text-[12px] font-medium">
-          <span className="bg-foreground/50 mr-1.5 size-1.5 rounded-full" />
+        <span className="bg-muted text-foreground inline-flex items-center rounded-full px-2.5 py-1 text-[12px] font-medium">
+          <span className="bg-foreground mr-1.5 size-1.5 rounded-full" />
           {items.length} items
         </span>
       </CardHeader>

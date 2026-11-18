@@ -52,7 +52,7 @@ export const overviewMetrics: OverviewMetric[] = [
     id: "active-users",
     label: "Active users",
     value: "21,377",
-    delta: "+6.2% vs prior",
+    delta: "44.3% of registered",
     accent: "green",
     sparkline: [20, 16, 22, 18, 24, 21, 27, 23, 29, 26, 31, 28],
   },
@@ -60,7 +60,7 @@ export const overviewMetrics: OverviewMetric[] = [
     id: "content-items",
     label: "Content items",
     value: "3,418",
-    delta: "+96 published",
+    delta: "96 published this month",
     accent: "amber",
     sparkline: [8, 10, 9, 14, 12, 16, 15, 18, 17, 20, 19, 22],
   },
@@ -68,7 +68,7 @@ export const overviewMetrics: OverviewMetric[] = [
     id: "ai-service",
     label: "AI service",
     value: "99.96%",
-    delta: "Uptime (30d)",
+    delta: "Uptime, p95 1.8 s",
     accent: "purple",
     sparkline: [30, 29, 31, 30, 32, 31, 30, 32, 31, 32, 31, 32],
   },
@@ -234,26 +234,26 @@ export const activeUsersSeries: ActiveUsersPoint[] = [
   {
     date: "2025-11-01",
     label: "Nov 1",
-    dailyActive: 14100,
-    previousPeriod: 12400,
+    dailyActive: 13600,
+    previousPeriod: 12100,
   },
   {
     date: "2025-11-02",
     label: "Nov 2",
-    dailyActive: 13800,
-    previousPeriod: 12300,
+    dailyActive: 13400,
+    previousPeriod: 11900,
   },
   {
     date: "2025-11-03",
     label: "Nov 3",
-    dailyActive: 14200,
-    previousPeriod: 12500,
+    dailyActive: 13700,
+    previousPeriod: 12200,
   },
   {
     date: "2025-11-04",
     label: "Today",
-    dailyActive: 14400,
-    previousPeriod: 12600,
+    dailyActive: 13900,
+    previousPeriod: 12300,
   },
 ];
 
@@ -271,8 +271,8 @@ export const recentActivity: ActivityItem[] = [
   {
     id: "2",
     change: [
-      { text: "Updated guidance tone for " },
-      { text: "evening check-ins", emphasis: true },
+      { text: "Activated " },
+      { text: "Scripture Guidance prompt v14", emphasis: true },
     ],
     module: "AI & Guidance",
     when: "48 min ago",
@@ -280,14 +280,24 @@ export const recentActivity: ActivityItem[] = [
   {
     id: "3",
     change: [
-      { text: "Enabled push digests for " },
-      { text: "church admins", emphasis: true },
+      { text: "Changed role of " },
+      { text: "Samuel Ortiz", emphasis: true },
+      { text: " to Moderator" },
     ],
-    module: "Settings",
+    module: "Users",
     when: "2 hr ago",
   },
   {
     id: "4",
+    change: [
+      { text: "Enabled push digests for " },
+      { text: "church admins", emphasis: true },
+    ],
+    module: "Settings",
+    when: "3 hr ago",
+  },
+  {
+    id: "5",
     change: [
       { text: "Added 24 verses to " },
       { text: "Hope & Healing", emphasis: true },
@@ -297,23 +307,13 @@ export const recentActivity: ActivityItem[] = [
     when: "Yesterday",
   },
   {
-    id: "5",
+    id: "6",
     change: [
       { text: "Drafted prompt pack " },
       { text: "‘Gratitude Week’", emphasis: true },
     ],
     module: "Journaling",
     when: "Yesterday",
-  },
-  {
-    id: "6",
-    change: [
-      { text: "Invited " },
-      { text: "3 moderators", emphasis: true },
-      { text: " to Guided staff" },
-    ],
-    module: "Users",
-    when: "2 days ago",
   },
   {
     id: "7",
@@ -357,13 +357,13 @@ export const contentTasks: ContentTask[] = [
   {
     id: "task-2",
     title: "Draft Journey Template",
-    subtitle: "Prompt submitted by Leah Kim",
+    subtitle: "Template drafted by Marcus Lee",
     actionLabel: "Edit & Publish",
   },
   {
     id: "task-3",
     title: "Updated Scripture Content",
-    subtitle: "Prompt submitted by Leah Kim",
+    subtitle: "Revision pending review from Ava Brooks",
     actionLabel: "Preview & Publish",
   },
 ];

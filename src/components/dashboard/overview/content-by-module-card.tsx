@@ -44,9 +44,9 @@ function ContentByModuleCard({
                     {item.count.toLocaleString("en-US")}
                   </span>
                 </div>
-                <div className="bg-muted h-1.5 w-full overflow-hidden rounded-full">
+                <div className="h-1.5 w-full overflow-hidden rounded-full bg-[#E8E8E4]">
                   <div
-                    className="bg-foreground h-full rounded-full"
+                    className="h-full rounded-full bg-[#171717]"
                     style={{ width }}
                   />
                 </div>

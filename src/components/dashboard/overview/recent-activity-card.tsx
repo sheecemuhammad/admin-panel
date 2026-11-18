@@ -63,10 +63,13 @@ function RecentActivityCard({ items, className }: RecentActivityCardProps) {
           <TableBody>
             {items.map((item) => (
               <TableRow key={item.id} className="hover:bg-muted/40">
-                <TableCell className="text-foreground max-w-[360px] px-6 py-3.5 text-[13px]">
+                <TableCell className="text-muted-foreground max-w-[360px] px-6 py-3.5 text-[13px]">
                   {item.change.map((part, index) =>
                     part.emphasis ? (
-                      <span key={index} className="font-semibold">
+                      <span
+                        key={index}
+                        className="text-foreground font-semibold"
+                      >
                         {part.text}
                       </span>
                     ) : (

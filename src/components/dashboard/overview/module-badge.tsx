@@ -2,14 +2,35 @@ import { Badge } from "@/components/ui/badge";
 import type { OverviewModule } from "@/lib/overview-data";
 import { cn } from "@/lib/utils";
 
-const moduleStyles: Record<OverviewModule, string> = {
-  "Journey & Goals": "bg-sky-100 text-sky-800",
-  "AI & Guidance": "bg-indigo-100 text-indigo-800",
-  Settings: "bg-zinc-100 text-zinc-700",
-  "Scripture & Bible": "bg-amber-100 text-amber-900",
-  Journaling: "bg-rose-100 text-rose-800",
-  Users: "bg-emerald-100 text-emerald-800",
-  "Church Management": "bg-violet-100 text-violet-800",
+const moduleStyles: Record<OverviewModule, { badge: string; dot: string }> = {
+  "Journey & Goals": {
+    badge: "bg-sky-100 text-sky-800",
+    dot: "bg-sky-800",
+  },
+  "AI & Guidance": {
+    badge: "bg-sky-100 text-sky-800",
+    dot: "bg-sky-800",
+  },
+  Settings: {
+    badge: "bg-sky-100 text-sky-800",
+    dot: "bg-sky-800",
+  },
+  "Scripture & Bible": {
+    badge: "bg-sky-100 text-sky-800",
+    dot: "bg-sky-800",
+  },
+  Journaling: {
+    badge: "bg-sky-100 text-sky-800",
+    dot: "bg-sky-800",
+  },
+  Users: {
+    badge: "bg-sky-100 text-sky-800",
+    dot: "bg-sky-800",
+  },
+  "Church Management": {
+    badge: "bg-sky-100 text-sky-800",
+    dot: "bg-sky-800",
+  },
 };
 
 type ModuleBadgeProps = {
@@ -18,15 +39,18 @@ type ModuleBadgeProps = {
 };
 
 function ModuleBadge({ module, className }: ModuleBadgeProps) {
+  const styles = moduleStyles[module];
+
   return (
     <Badge
       variant="secondary"
       className={cn(
-        "h-auto rounded-full border-0 px-2.5 py-1 text-[12px] font-medium",
-        moduleStyles[module],
+        "h-auto gap-1.5 rounded-full border-0 px-2.5 py-1 text-[12px] font-medium",
+        styles.badge,
         className
       )}
     >
+      <span className={cn("size-1.5 shrink-0 rounded-full", styles.dot)} />
       {module}
     </Badge>
   );

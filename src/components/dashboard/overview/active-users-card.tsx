@@ -24,7 +24,7 @@ const chartConfig = {
   },
   previousPeriod: {
     label: "Previous period",
-    color: "#93C5FD",
+    color: "#C5D4E8",
   },
 } satisfies ChartConfig;
 
@@ -93,9 +93,13 @@ function ActiveUsersTooltip({
 }
 
 function ActiveUsersCard({ data, className }: ActiveUsersCardProps) {
+  const midIndex = Math.max(
+    0,
+    data.findIndex((point) => point.label === "Oct 20")
+  );
   const tickIndexes = new Set([
     0,
-    Math.floor(data.length / 2),
+    midIndex > 0 ? midIndex : Math.floor(data.length / 2),
     data.length - 1,
   ]);
 
@@ -121,7 +125,7 @@ function ActiveUsersCard({ data, className }: ActiveUsersCardProps) {
             Daily active
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="size-2.5 rounded-[2px] bg-[#93C5FD]" />
+            <span className="size-2.5 rounded-[2px] bg-[#C5D4E8]" />
             Previous period
           </span>
         </div>
@@ -150,6 +154,8 @@ function ActiveUsersCard({ data, className }: ActiveUsersCardProps) {
               }
             />
             <YAxis
+              domain={[0, 14000]}
+              ticks={[0, 7000, 14000]}
               tickLine={false}
               axisLine={false}
               width={40}

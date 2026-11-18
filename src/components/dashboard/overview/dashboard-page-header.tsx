@@ -18,24 +18,22 @@ function DashboardPageHeader({
   return (
     <div
       className={cn(
-        "flex flex-col gap-3 rounded-2xl bg-white px-5 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-5 sm:py-3",
+        "flex h-[68px] w-full shrink-0 items-center justify-between gap-4 border-b border-[#E4E7EB] bg-[#FFFFFF] px-5 md:px-8",
         className
       )}
     >
-      <div className="min-w-0">
-        <h1 className="text-foreground font-sans text-[16px] leading-[23.26px] font-semibold tracking-[-0.18px]">
+      <div className="min-w-0 shrink">
+        <h1 className="font-sans text-[16px] leading-[23.26px] font-semibold tracking-[-0.18px] text-[#101828]">
           {title}
         </h1>
         {subtitle ? (
-          <p className="text-muted-foreground font-sans text-[13px] leading-[17.41px] font-normal tracking-normal">
+          <p className="truncate font-sans text-[13px] leading-[17.41px] font-normal tracking-[0px] text-[#667085]">
             {subtitle}
           </p>
         ) : null}
       </div>
       {actions ? (
-        <div className="flex flex-wrap items-center gap-2 sm:justify-end">
-          {actions}
-        </div>
+        <div className="flex shrink-0 items-center gap-2">{actions}</div>
       ) : null}
     </div>
   );

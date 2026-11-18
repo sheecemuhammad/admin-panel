@@ -27,7 +27,7 @@ function OverviewMain() {
   const [period, setPeriod] = useState<OverviewPeriod>("30d");
 
   return (
-    <div className="flex min-w-0 flex-1 flex-col gap-4">
+    <div className="flex min-w-0 flex-1 flex-col">
       <DashboardPageHeader
         title="Overview"
         subtitle="Wednesday, November 4. Good afternoon, Grace"
@@ -55,36 +55,38 @@ function OverviewMain() {
         }
       />
 
-      <div className="flex flex-col gap-4 xl:flex-row xl:items-start">
-        <div className="flex min-w-0 flex-1 flex-col gap-4">
-          <section className="space-y-3">
-            <div className="flex flex-wrap items-end justify-between gap-2">
-              <h2 className="text-foreground text-[16px] font-semibold tracking-tight">
-                Summary
-              </h2>
-              <p className="text-muted-foreground text-[13px]">
-                {periodLabels[period]}
-              </p>
-            </div>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
-              {overviewMetrics.map((metric) => (
-                <MetricCard
-                  key={metric.id}
-                  label={metric.label}
-                  value={metric.value}
-                  delta={metric.delta}
-                  accent={metric.accent}
-                  sparkline={metric.sparkline}
-                />
-              ))}
-            </div>
-          </section>
+      <div className="flex flex-col gap-5 px-5 py-5 md:px-8 md:py-7">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-start">
+          <div className="flex min-w-0 flex-1 flex-col gap-5">
+            <section className="space-y-3.5">
+              <div className="flex flex-wrap items-end justify-between gap-2">
+                <h2 className="text-foreground font-sans text-[16px] font-semibold tracking-tight">
+                  Summary
+                </h2>
+                <p className="text-muted-foreground text-[13px]">
+                  {periodLabels[period]}
+                </p>
+              </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {overviewMetrics.map((metric) => (
+                  <MetricCard
+                    key={metric.id}
+                    label={metric.label}
+                    value={metric.value}
+                    delta={metric.delta}
+                    accent={metric.accent}
+                    sparkline={metric.sparkline}
+                  />
+                ))}
+              </div>
+            </section>
 
-          <ActiveUsersCard data={activeUsersSeries} />
-          <RecentActivityCard items={recentActivity} />
+            <ActiveUsersCard data={activeUsersSeries} />
+            <RecentActivityCard items={recentActivity} />
+          </div>
+
+          <OverviewAside />
         </div>
-
-        <OverviewAside />
       </div>
     </div>
   );

@@ -36,6 +36,7 @@ function MetricCard({
   const chartConfig = {
     v: { label, color: styles.bar },
   } satisfies ChartConfig;
+  const isTrendDelta = /^[+-]/.test(delta.trim());
 
   return (
     <Card
@@ -45,17 +46,17 @@ function MetricCard({
         className
       )}
     >
-      <CardHeader className="gap-1 px-4">
-        <p className="text-muted-foreground text-[13px] font-medium">{label}</p>
-        <p className="text-foreground text-[28px] leading-none font-semibold tracking-tight">
+      <CardHeader className="gap-2 px-4">
+        <p className="text-muted-foreground text-[12px] font-medium">{label}</p>
+        <p className="text-foreground text-[22px] leading-none font-semibold tracking-tight">
           {value}
         </p>
       </CardHeader>
       <CardContent className="space-y-2 px-4">
         <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-10 w-full"
-          initialDimension={{ width: 160, height: 40 }}
+          className="aspect-auto h-6 w-full"
+          initialDimension={{ width: 160, height: 24 }}
         >
           <BarChart
             data={chartData}
@@ -64,7 +65,14 @@ function MetricCard({
             <Bar dataKey="v" fill="var(--color-v)" radius={[2, 2, 0, 0]} />
           </BarChart>
         </ChartContainer>
-        <p className={cn("text-[12px] font-medium", styles.delta)}>{delta}</p>
+        <p
+          className={cn(
+            "text-[10px] font-medium",
+            isTrendDelta ? styles.delta : "text-muted-foreground"
+          )}
+        >
+          {delta}
+        </p>
       </CardContent>
     </Card>
   );

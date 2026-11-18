@@ -34,7 +34,7 @@ function PeriodToggle({
       size="sm"
       spacing={0}
       className={cn(
-        "h-9 rounded-full bg-[#EFEFED] p-1 shadow-none ring-0",
+        "h-[36px] w-[212px] gap-0 rounded-[12px]! bg-[#F2F3F5] p-[2.5px] shadow-none ring-0",
         className
       )}
     >
@@ -43,12 +43,15 @@ function PeriodToggle({
           key={option.value}
           value={option.value}
           className={cn(
-            "h-7 rounded-full px-3.5 font-sans text-[13px] font-medium text-[#8B8F97] shadow-none",
-            "hover:text-foreground hover:bg-transparent",
-            "aria-pressed:text-foreground aria-pressed:bg-white aria-pressed:font-semibold",
-            "aria-pressed:shadow-[0px_1px_3px_0px_rgba(16,24,40,0.12)]",
-            "data-[state=on]:text-foreground data-[state=on]:bg-white data-[state=on]:font-semibold",
-            "data-[state=on]:shadow-[0px_1px_3px_0px_rgba(16,24,40,0.12)]"
+            "h-[30px] min-w-0 flex-1 rounded-[12px]! px-0 font-sans text-[13px] leading-none font-medium text-[#8B8F97] shadow-none",
+            "hover:bg-transparent hover:text-[#101828]",
+            "group-data-[spacing=0]/toggle-group:rounded-[12px]!",
+            "aria-pressed:bg-[#FFFFFF] aria-pressed:font-semibold aria-pressed:text-[#101828]",
+            "aria-pressed:shadow-[0px_1px_3px_0px_rgba(16,24,40,0.10)]",
+            "data-[state=on]:bg-[#FFFFFF] data-[state=on]:font-semibold data-[state=on]:text-[#101828]",
+            "data-[state=on]:shadow-[0px_1px_3px_0px_rgba(16,24,40,0.10)]",
+            "group-data-horizontal/toggle-group:data-[spacing=0]:first:rounded-[12px]!",
+            "group-data-horizontal/toggle-group:data-[spacing=0]:last:rounded-[12px]!"
           )}
         >
           {option.label}
